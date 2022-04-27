@@ -20,7 +20,7 @@ public class TestMaximum {
                 max = num[i];
             }
         }
-        log.info("maximun number of given three numbers = " +max);
+        log.info("maximun number of given three integer numbers = " +max);
         return max;
     }
 
@@ -35,6 +35,20 @@ public class TestMaximum {
         log.info("maximun number of given three float numbers = " + max);
     }
 
+
+    // implementing method to get string of maximum length
+    public void getThreeStrings(String[] string) {
+        int l = 0;
+        int max = string[0].length();
+        for (int i=0; i<3; i++) {
+            if(max <= string[i].length()) {
+                max = string[i].length();
+                l = i;
+            }
+        }
+        log.info("maximun string of given three strings = " + string[l]);
+    }
+
     public static void main(String[] args) {
         BasicConfigurator.configure();
         log.info("Welcome to generics !");
@@ -45,5 +59,8 @@ public class TestMaximum {
 
         Float[] f = {1.2f, 1.9f, 1.3f};
         generics.getThreeFloatNumbers(f);
+
+        String[] s = {"Apple", "Peach", "Banana"};
+        generics.getThreeStrings(s);
     }
 }
