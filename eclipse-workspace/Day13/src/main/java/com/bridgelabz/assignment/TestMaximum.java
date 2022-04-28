@@ -17,8 +17,12 @@ class Generic {
 
     // implementing method to get maximum of three integer numbers
     public static <E> int testMaximum(int... num) {
-        for (int x : num)
-            log.info(x);
+        int max = 0;
+        for (int x : num) {
+            if (max <= x)
+                max = x;
+        }
+        log.info("maximum number of " + num.length +" integers is : " +max);
         return num.length;
     }
 
